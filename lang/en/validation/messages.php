@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'required' => 'This field is required.',
+    'string' => 'This field must be a valid string.',
+    'max' => 'This field may not be greater than :max.',
+    'min' => 'This field must be at least :min.',
+    'email' => 'Please provide a valid email address.',
+    'unique' => 'This value has already been taken.',
+    'numeric' => 'This field must be a number.',
+    'integer' => 'This field must be an integer.',
+    'date' => 'This field must be a valid date.',
+    'after' => 'The date must be after :date.',
+    'before' => 'The date must be before :date.',
+    'after_or_equal' => 'The date must be after or equal to :date.',
+    'before_or_equal' => 'The date must be before or equal to :date.',
+    'confirmed' => 'The confirmation does not match.',
+    'exists' => 'The selected value is invalid.',
+    'in' => 'The selected value is invalid.',
+    'not_in' => 'The selected value is invalid.',
+    'regex' => 'The format is invalid.',
+    'size' => 'This field must be :size.',
+    'between' => 'This field must be between :min and :max.',
+    'mimes' => 'This field must be a file of type: :values.',
+    'mimetypes' => 'This field must be a file of type: :values.',
+];

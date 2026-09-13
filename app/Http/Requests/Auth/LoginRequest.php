@@ -36,7 +36,7 @@ class LoginRequest extends BaseFormRequest
 
             if ($this->is('api/*')) {
                 throw new HttpResponseException(
-                    $this->validationErrorResponse(['email' => trans('auth.failed')])
+                    $this->validationErrorResponse(['email' => [trans('auth.failed')]])
                 );
             }
 

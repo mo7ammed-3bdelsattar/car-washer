@@ -59,7 +59,7 @@ class BaseFormRequest extends FormRequest
 
         if ($this->is('api/*')) {
             throw new HttpResponseException(
-                $this->validationErrorResponse([$attribute => $message])
+                $this->validationErrorResponse([$attribute => [$message]])
             );
         }
 

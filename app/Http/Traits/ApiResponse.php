@@ -54,10 +54,22 @@ trait ApiResponse
         string $message = null
     ): JsonResponse {
         $message = $message ?? __('Validation failed');
+
+        if ($errors instanceof \Illuminate\Contracts\Support\MessageBag) {
+            $formattedErrors = $errors->toArray();
+        } elseif (is_array($errors)) {
+            $formattedErrors = [];
+            foreach ($errors as $key => $value) {
+                $formattedErrors[$key] = is_array($value) ? $value : [$value];
+            }
+        } else {
+            $formattedErrors = (array) $errors;
+        }
+
         return $this->errorResponse(
             $message,
             Response::HTTP_UNPROCESSABLE_ENTITY,
-            $errors
+            $formattedErrors
         );
     }
 
