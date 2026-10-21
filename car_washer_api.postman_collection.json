@@ -293,6 +293,66 @@
 				}
 			],
 			"description": "Endpoints for User Profile Management"
+		},
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "Submit Question (Public Form)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mohammed Ali\",\n    \"questions\": \"Do you have mobile car washing in my area?\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/questions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"questions"
+							]
+						},
+						"description": "Public endpoint to submit a question form with 2 inputs (name and textarea questions)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Questions (Public)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/questions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"questions"
+							]
+						},
+						"description": "Public endpoint to retrieve questions from the database. Supports optional pagination with ?page=1."
+					},
+					"response": []
+				}
+			],
+			"description": "Public endpoints for Questions form submission and listing."
 		}
 	],
 	"variable": [
